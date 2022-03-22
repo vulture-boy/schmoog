@@ -1,0 +1,27 @@
+# Initial Setup
+vlib work
+vlog -timescale 1ns/1ns key_test.v
+vsim wave_creator
+log {/*}
+add wave {/*}
+
+force {clk} 0 0, 1 5 -r 10
+force {enable} 1 0
+force {reset_n} 1 0, 0 10
+
+# Det. Note
+force {note[0]} 0 0
+force {note[1]} 0 0
+force {note[2]} 0 0
+force {note[3]} 0 0
+
+# Det. Octave
+force {octave[0]} 0 0
+force {octave[1]} 0 0 
+force {octave[2]} 0 0
+
+# Det. Wave Output
+force {wave[0]} 0 0
+force {wave[1]} 0 0
+
+run 100ns
